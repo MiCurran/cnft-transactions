@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 
 export async function getServerSideProps(context) {
   const { txHash } = context.query;
-  const response = await axios.get(`http://localhost:3000/api/v1/txs/${txHash}`);
+  const response = await axios.get(`/api/v1/txs/${txHash}`);
   return {
     props: {response: response.data}, // will be passed to the page component as props
   }
