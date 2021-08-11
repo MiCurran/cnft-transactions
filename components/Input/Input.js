@@ -10,9 +10,9 @@ import {
 
 const CustomInput = (props) => {
     return (
-<FormControl id={props.id}>
+<FormControl id={props.id} marginY="8">
   <FormLabel>{props.label}</FormLabel>
-  <Input onChange={props.onChange} type="email" value={props.value}/>
+  <Input onChange={props.onChange} type={props.type} value={props.value}/>
   {props.helperText && 
     <FormHelperText>{props.helperText}</FormHelperText> 
     }
