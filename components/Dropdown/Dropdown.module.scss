@@ -1,0 +1,51 @@
+@import "../../styles/base";
+
+.dropup, .dropright, .dropdown, .dropleft {
+    top: -2px;
+    position: relative;
+}
+
+.dropdownMenu {
+    top: 0;
+    width: 100%;
+    max-height: 198px;
+    overflow-y: scroll;
+}
+
+.dropdown {
+    border: 1px solid #959595;
+    height: 45px;
+    padding-top: 10px;
+}
+
+.dropdownIcon {
+    position: absolute;
+    right: 13px;
+    top: 20px;
+}
+
+.dropdownItem {
+    height: 50px;
+    border-bottom: 1px solid #959595;
+    width: 96%;
+    padding-top: 15px;
+    margin: auto;
+}
+
+.dropdownItem:last-child {
+    border-bottom: none;
+}
+
+.dropdown::after {
+    display: none;
+}
+
+.large {
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    svg {
+        top: unset;
+    }
+}

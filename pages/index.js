@@ -3,6 +3,8 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import axios from 'axios';
 import { useState } from 'react';
+import CustomInput from '../components/Input/Input';
+import { Button, Heading } from '@chakra-ui/react';
 
 export default function Home() {
   const [id, setId] = useState('');
@@ -35,7 +37,7 @@ export default function Home() {
       <main className={styles.main}>
         <div>
           <div>
-            <h1>CNFT Transactions</h1>
+            <Heading>CNFT Transactions</Heading>
           </div>
           <div>
         {unsigE?.lasttxs?.length > 1 && 
@@ -43,16 +45,17 @@ export default function Home() {
           } 
         </div>
           <div>
-          <input value={policyId} onChange={(e) => handleValueChange('policyId', e.target.value)}></input>
-          <input value={id} onChange={(e) => handleValueChange('id', e.target.value)}></input>
-          <button onClick={() => handleTestLog(id, policyId)}>Search</button>
+            <CustomInput onChange={(e) => handleValueChange('policyId', e.target.value)} value={policyId} label="property ID"/>
+            <CustomInput onChange={(e) => handleValueChange('id', e.target.value)} value={id} label="NFT ID"/>
+
+          <Button onClick={() => handleTestLog(id, policyId)}>Search</Button>
           </div>  
           {unsigE?.lasttxs?.length > 1 && 
             unsigE?.lasttxs.map((unsig,i) => {
               if (i < 4){
               return(
                 <div key={unsig}>
-                <h4>tx hash</h4>
+                <Heading as='h2'>tx hash</Heading>
                 <p>{unsig}</p>
                 </div>
               )}
