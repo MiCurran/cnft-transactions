@@ -4,9 +4,8 @@ import styles from '../styles/Home.module.css'
 import axios from 'axios';
 import { useState } from 'react';
 import CustomInput from '../components/Input/Input';
-import { Button, Heading } from '@chakra-ui/react';
+import { Button, Heading, Text } from '@chakra-ui/react';
 import Dropdown from '../components/Dropdown/Dropdown';
-import Link from 'next/link';
 
 export default function Home() {
   const [id, setId] = useState('');
@@ -31,6 +30,16 @@ export default function Home() {
       label: 'Clay Mates',
       id: 'c8e5bbe82b0431ff26c3b8480cfafe7569fd2a20128b16d05694276f',
       value: 3
+    },
+    {
+      label: 'Ada monsterz',
+      id: '',
+      value: 4
+    },
+    {
+      label: '',
+      id: '',
+      value: 5
     }
 
   ]
@@ -93,13 +102,14 @@ export default function Home() {
           </div>  
           {unsigE?.lasttxs?.length > 1 && 
           <>
-          <Heading as="h2">Asset Transactions</Heading>
+          <Heading marginTop="20" as="h2">Asset Transactions</Heading>
+          <Text marginBottom="10">click the tx hash to view details of each transaction</Text>
             {unsigE?.lasttxs.map((tx,i) => {
               if (i < 4){
               return(
                 <div key={tx}>
                 <Heading as='h6' fontSize="md">tx hash</Heading>
-                <Link href={`/tx/${tx}`}>{tx}</Link>
+                <a target="_blank" href={`https://explorer.cardano.org/en/transaction?id=${tx}`}>{tx}</a>
                 </div>
               )}
             })}
