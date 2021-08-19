@@ -30,16 +30,6 @@ export default function Home() {
       label: 'Clay Mates',
       id: 'c8e5bbe82b0431ff26c3b8480cfafe7569fd2a20128b16d05694276f',
       value: 3
-    },
-    {
-      label: 'Ada monsterz',
-      id: '',
-      value: 4
-    },
-    {
-      label: '',
-      id: '',
-      value: 5
     }
 
   ]
@@ -109,7 +99,7 @@ export default function Home() {
               return(
                 <div key={tx}>
                 <Heading as='h6' fontSize="md">tx hash</Heading>
-                <a target="_blank" href={`https://explorer.cardano.org/en/transaction?id=${tx}`}>{tx}</a>
+                <a target="_blank" rel="noreferrer" href={`https://explorer.cardano.org/en/transaction?id=${tx}`}>{tx}</a>
                 </div>
               )}
             })}
